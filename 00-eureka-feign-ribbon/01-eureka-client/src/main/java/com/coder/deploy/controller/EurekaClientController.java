@@ -1,0 +1,16 @@
+package com.coder.deploy.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api-client")
+public class EurekaClientController {
+	
+	@GetMapping("/ola")
+	public ResponseEntity<String> getOla() {
+		return ResponseEntity.ok("Olá do Eureka Client");
+	}
+}
