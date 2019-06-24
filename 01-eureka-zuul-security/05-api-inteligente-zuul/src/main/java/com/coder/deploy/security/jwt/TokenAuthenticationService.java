@@ -20,7 +20,7 @@ public class TokenAuthenticationService {
     static final String SECRET = "MinhaPalavraChave";
     static final String TOKEN_PREFIX = "Bearer";
     static final String HEADER_STRING = "Authorization";
-    static final long EXPIRATION_TIME = 60000;
+    static final long EXPIRATION_TIME = 120000;
 
     static void addAuthentication(HttpServletResponse response, String username) {
         String JWT = Jwts.builder()
@@ -28,8 +28,9 @@ public class TokenAuthenticationService {
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .signWith(SignatureAlgorithm.HS512, SECRET)
                 .compact();
-
-        response.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+        final String token = TOKEN_PREFIX + " " + JWT;
+        PreFilter.tokenCreated = token;
+        response.addHeader(HEADER_STRING, token);
     }
     
     static Authentication getAuthentication(HttpServletRequest request, HttpServletResponse response) {
@@ -42,7 +43,6 @@ public class TokenAuthenticationService {
                     .getBody()
                     .getSubject();
             if (user != null) {
-            	PreFilter.tokenCreated = token;
                 return new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList());
             }
         }
