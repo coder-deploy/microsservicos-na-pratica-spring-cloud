@@ -20,8 +20,6 @@ public class DecodedTokenJWT {
 		  String unencoded = new String(Base64.decodeBase64(body), "UTF-8");
 		  Map<Object, String> data = new HashMap<>();
 		  data.put("JWT", unencoded);
-		  System.out.println(" *********** " + new Gson().fromJson(data.get("JWT"), DecodedTokenJWT.class) + " *********** ");
-	      
 	      return new Gson().fromJson(data.get("JWT"), DecodedTokenJWT.class);
 	  }
 

@@ -1,5 +1,7 @@
 package com.coder.deploy.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.file.AccessDeniedException;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +21,7 @@ public class ProdutoController {
 	private ProdutoService produtoService;
 	
 	@GetMapping()
-	public ResponseEntity<List<Produto>> findAll() {
+	public ResponseEntity<List<Produto>> findAll() throws AccessDeniedException, UnsupportedEncodingException {
 		return ResponseEntity.ok(produtoService.findAll());
 	}
 	

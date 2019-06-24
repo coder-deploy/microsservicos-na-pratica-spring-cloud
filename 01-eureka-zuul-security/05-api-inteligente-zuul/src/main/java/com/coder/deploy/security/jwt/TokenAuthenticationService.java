@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 
+import com.coder.deploy.filters.PreFilter;
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -40,12 +42,13 @@ public class TokenAuthenticationService {
                     .getBody()
                     .getSubject();
             if (user != null) {
+            	PreFilter.tokenCreated = token;
                 return new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList());
             }
         }
         return null;
-       } catch(Exception e) {
-	    	   try {
+        } catch(Exception e) {
+    	   try {
 				response.sendError(401, "Sem authorização! Token expirado!");
 			} catch (IOException e1) {
 				e1.printStackTrace();

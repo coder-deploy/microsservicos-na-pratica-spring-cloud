@@ -1,6 +1,6 @@
 spring:
   application:
-    name: pedido-service
+    name: PEDIDO-SERVICE
 
 server:
   port: 9093

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.coder.deploy</groupId>
-	<artifactId>06-client-produto</artifactId>
+	<artifactId>06-client-produtos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>06-client-produto</name>
+	<name>06-client-produtos</name>
 	<description>Client - produto</description>
 
 	<properties>
@@ -44,11 +44,6 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt</artifactId>
-			<version>0.7.0</version>
 		</dependency>
 		<dependency>
 		    <groupId>commons-codec</groupId>

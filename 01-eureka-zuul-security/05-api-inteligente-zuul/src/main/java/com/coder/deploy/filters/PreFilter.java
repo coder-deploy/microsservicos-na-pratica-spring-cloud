@@ -21,6 +21,7 @@ public class PreFilter extends ZuulFilter implements Filter{
 
 	private static final String AUTHORIZATION = "Authorization";
 	private static final Logger logger = LoggerFactory.getLogger(PreFilter.class);
+	public static String tokenCreated = "";
 	
 	@Override
 	public Object run() throws ZuulException {
