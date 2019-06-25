@@ -1,0 +1,7 @@
+--------------------------
+Necessário
+--------------------------
+Maven
+Java 8
+STS - Spring Tool Suite
+Postman
