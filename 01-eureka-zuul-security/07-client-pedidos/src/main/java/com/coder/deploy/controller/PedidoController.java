@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.coder.deploy.dto.ProdutoDTO;
 import com.coder.deploy.model.Pedido;
 import com.coder.deploy.service.PedidoService;
 import com.coder.deploy.service.PedidoServiceProdutoInterface;
@@ -33,7 +32,7 @@ public class PedidoController {
 	}
 	
 	@GetMapping("/produto/{codigo}")
-	public ProdutoDTO findAll(@PathVariable("codigo") int codigo){
+	public ResponseEntity<Object> findAll(@PathVariable("codigo") int codigo){
 		return pedidoProdutoService.findByCodigo(codigo);
 	}
 	
