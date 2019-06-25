@@ -1,0 +1,16 @@
+-----------------
+POST
+-----------------
+http://localhost:9090/oauth/login
+
+-----------------
+GET
+-----------------
+http://localhost:9090/token
+http://localhost:9090/api/produtos/
+http://localhost:9090/api/produtos/{codigoProduto}
+http://localhost:9090/api/pedidos
+http://localhost:9090/api/pedidos/{numeroPedido}
+http://localhost:9090/api/pedidos/produto/{codigoProduto}
+http://localhost:9091
+http://localhost:9093
