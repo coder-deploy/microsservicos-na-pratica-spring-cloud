@@ -21,7 +21,7 @@ public class PedidoService {
 			new Pedido(39779, "2019-06-18", lista),
 			new Pedido(52299, "2019-06-19", lista));
 	
-	public List<Pedido> findAll() {
+	public PedidoService() {
 		List<ProdutoDTO> produtosPedido25111 = new ArrayList<>();
 		List<ProdutoDTO> produtosPedido42127 = new ArrayList<>();
 		List<ProdutoDTO> produtosPedido39779 = new ArrayList<>();
@@ -57,6 +57,9 @@ public class PedidoService {
 				i.setProdutos(produtosPedido52299);
 			}
 		});		
+	}
+	
+	public List<Pedido> findAll() {
 		return pedidos;
 	}
 	

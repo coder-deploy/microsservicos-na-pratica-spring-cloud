@@ -22,6 +22,6 @@ zuul:
     pedido-service:
        path: /pedidos/**
        serviceId: PEDIDO-SERVICE
-       
   host:
-    socket-timeout-millis: 30000       
+    socket-timeout-millis: 30000    
+       
