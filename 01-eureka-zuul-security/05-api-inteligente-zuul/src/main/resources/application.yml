@@ -23,5 +23,10 @@ zuul:
        path: /pedidos/**
        serviceId: PEDIDO-SERVICE
   host:
-    socket-timeout-millis: 30000    
-       
+    connect-timeout-millis: 50000
+    socket-timeout-millis: 600000      
+    
+ribbon:
+     ConnectTimeout: 1000000
+     ReadTimeout: 1000000
+    

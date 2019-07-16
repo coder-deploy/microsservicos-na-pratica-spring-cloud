@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.coder.deploy.delegate.PedidoServiceDelegate;
 import com.coder.deploy.model.Pedido;
 import com.coder.deploy.service.PedidoService;
 import com.coder.deploy.service.PedidoServiceProdutoInterface;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController()
-public class PedidoController {
+public class PedidoController extends PedidoServiceDelegate{
 
 	@Autowired
 	private PedidoService pedidoService;
@@ -32,8 +34,9 @@ public class PedidoController {
 	}
 	
 	@GetMapping("/produto/{codigo}")
+	@HystrixCommand(fallbackMethod = "findByCodigoFallback")
 	public ResponseEntity<Object> findAll(@PathVariable("codigo") int codigo){
-		return pedidoProdutoService.findByCodigo(codigo);
+		return pedidoProdutoService.findByCodigoFallback(codigo);
 	}
 	
 	
