@@ -5,10 +5,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name="produto-service")
+import com.coder.deploy.delegate.PedidoServiceDelegate;
+
+@FeignClient(name="produto-service", fallback = PedidoServiceDelegate.class)
 public interface PedidoServiceProdutoInterface {
 
 	@GetMapping("/{codigo}")
-	public ResponseEntity<Object> findByCodigoFallback(@PathVariable("codigo") int codigo);	
+	public ResponseEntity<Object> findByCodigoProduto(@PathVariable("codigo") int codigo);	
 	
 }

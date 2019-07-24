@@ -9,7 +9,8 @@ import com.coder.deploy.service.PedidoServiceProdutoInterface;
 @Component
 public class PedidoServiceDelegate implements PedidoServiceProdutoInterface{
 	
-	public ResponseEntity<Object> findByCodigoFallback(int codigo) {
+	@Override
+	public ResponseEntity<Object> findByCodigoProduto(int codigo) {
 		ErrorDTO errorDTO = new ErrorDTO(000, "Serviço de produto indisponível!");
 		return ResponseEntity.ok(errorDTO);
 	}

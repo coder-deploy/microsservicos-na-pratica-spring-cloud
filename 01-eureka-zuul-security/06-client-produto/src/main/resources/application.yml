@@ -3,7 +3,7 @@ spring:
     name: PRODUTO-SERVICE
 
 server:
-  port: 9091
+  port: 9099
 
 eureka:
   client:
