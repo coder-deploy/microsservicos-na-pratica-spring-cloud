@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.coder.deploy.enums.Operacao;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -31,6 +30,6 @@ public class Transacao {
 	@Column(name="valor")
 	private Double valor;
 	@Column(name="operacao")
-	private Operacao operacao;
+	private String operacao;
 	
 }
