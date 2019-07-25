@@ -1,0 +1,4 @@
+
+zookeeper-server-start.bat zookeeper.properties
+
+kafka-server-start.bat server.properties

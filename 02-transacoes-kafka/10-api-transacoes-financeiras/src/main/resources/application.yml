@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: TRANSACOES-FINANCEIRAS-SERVICE
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers:
+          - localhost:9092
+      bindings:
+          kafka-send-in:
+            destination: transacoes
+            contentType: application/json
+          kafka-send-out:
+            destination: transacoes
+            contentType: application/json     
+
+server:
+  port: 6161
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+
+logging:
+    file: transacoes-financeiras.log
+    level:
+      root: 
+      project:
+          user:
+            UserClient: FULL

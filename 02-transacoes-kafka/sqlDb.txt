@@ -1,0 +1,6 @@
+CREATE TABLE `transacoes` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `data` varchar(10) NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  `operacao` varchar(1) NOT NULL,
+  PRIMARY KEY (`id`);
