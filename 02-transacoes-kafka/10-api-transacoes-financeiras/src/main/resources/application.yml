@@ -24,6 +24,8 @@ eureka:
       default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
   instance:
     prefer-ip-address: true
+    
+ribbon:  eureka:    enabled: true
 
 logging:
     file: transacoes-financeiras.log
