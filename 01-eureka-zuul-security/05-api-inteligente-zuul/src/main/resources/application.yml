@@ -1,7 +1,20 @@
 spring:
   application:
     name: API-INTELIGENTE-ZUUL
-
+  boot:
+     admin:
+        client:
+            url: http://localhost:7777/admin
+              
+management:
+    endpoints:
+       web:
+          exposure:
+              include: "*"
+    endpoint:
+      health:
+        show-details: always
+        
 server:
   port: 9090
 

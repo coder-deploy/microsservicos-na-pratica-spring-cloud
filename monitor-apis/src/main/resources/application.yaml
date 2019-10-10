@@ -1,0 +1,12 @@
+server:
+  port: 7777
+
+spring:
+  application:
+     name: admin-service
+  boot:
+     admin:
+       context-path: /admin
+       client:
+        username: user
+        password: secret
