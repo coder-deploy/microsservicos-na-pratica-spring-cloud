@@ -21,6 +21,9 @@ spring:
           kafka-send-out:
             destination: transacoes
             contentType: application/json   
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
 
 server:
   port: 6262

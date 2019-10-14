@@ -13,8 +13,7 @@ spring:
             contentType: application/json
           kafka-send-out:
             destination: transacoes
-            contentType: application/json     
-
+            contentType: application/json       kafka:    consumer:      auto-offset-reset: earliest
 server:
   port: 6161
 
