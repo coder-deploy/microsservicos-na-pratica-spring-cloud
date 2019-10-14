@@ -1,6 +1,10 @@
 spring:
   application:
     name: TRANSACOES-FINANCEIRAS-SERVICE
+  boot:
+     admin:
+        client:
+            url: http://localhost:7777/admin
   cloud:
     stream:
       kafka:
@@ -13,7 +17,20 @@ spring:
             contentType: application/json
           kafka-send-out:
             destination: transacoes
-            contentType: application/json       kafka:    consumer:      auto-offset-reset: earliest
+            contentType: application/json     
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+                  
+management:
+    endpoints:
+       web:
+          exposure:
+              include: "*"
+    endpoint:
+      health:
+        show-details: always
+        
 server:
   port: 6161
 
